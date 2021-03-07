@@ -1,4 +1,4 @@
-const { Command, AkairoModule } = require('discord-akairo');
+const { Command } = require('discord-akairo');
 
 class tag extends Command {
     constructor() {
