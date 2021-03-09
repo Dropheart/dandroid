@@ -8,7 +8,8 @@
     "discord.js": "^12.5.1",
     "prompt-sync": "^4.2.0",
     "spotify-web-api-node": "^5.0.0",
-    "sqlite": "^4.0.19"
+    "sqlite": "^4.0.19",
+    "twit": "^2.2.11"
   },
   "devDependencies": {},
   "scripts": {
