@@ -22,3 +22,4 @@ class MyClient extends AkairoClient {
 const client = new MyClient();
 client.login(config.token);
 require("./newsfeed/twitter.js")(client);
+require("./newsfeed/reddit.js")(client);
