@@ -6,8 +6,8 @@ npm install or something and then node bot.js
 don't forget to copy config_example.json and rename to config.jspn
 
 # todo
-- [ ] twitter feed
-- [ ] reddit feed
+- [x] twitter feed
+- [x] reddit feed
 - [ ] music bot
 - [ ] polls
 - [ ] roles
