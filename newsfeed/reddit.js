@@ -7,7 +7,7 @@ module.exports = async (client) => {
     redditchannel = await client.channels.fetch(config.redditChannel);
 
     snooper = new reddit({
-        automatic_retries: true,
+        automatic_retries: false,
         api_requests_per_minute: 60
     })
 
