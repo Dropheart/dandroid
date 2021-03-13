@@ -5,14 +5,19 @@ module.exports = async (client) => {
     reddit = require('reddit-snooper')
     config = require('../config.json')
     redditchannel = await client.channels.fetch(config.redditChannel);
+    let url = "httpS://reddit.com/"
 
     snooper = new reddit({
-        automatic_retries: false,
+        automatic_retries: true,
         api_requests_per_minute: 60
     })
 
     snooper.watcher.getPostWatcher('imaginedragons')
     .on('post', function(post) {
+        if (url == post.data.url) {
+            return;
+        }
+        url = post.data.url 
         embed = new MessageEmbed()
         .setTitle(post.data.title)
         .setURL(`https://reddit.com${post.data.permalink}`)
