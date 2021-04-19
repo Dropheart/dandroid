@@ -24,6 +24,7 @@ module.exports = (client) => {
       var stream = T.stream('statuses/filter', { follow: twitterAccs });
       console.log('Stream enabled for: @imaginedragons, @danreynolds, @danielplatzman, @waynesermon, @benamckee');
       stream.on('tweet', function (tweet) {
+        if (tweet.text.includes('clown')) break;
         var url = "https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str;
         if (tweet.user.id_str == '75916180'){
           try {
