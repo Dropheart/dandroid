@@ -25,7 +25,7 @@ module.exports = (client) => {
       console.log('Stream enabled for: @imaginedragons, @danreynolds, @danielplatzman, @waynesermon, @benamckee');
       stream.on('tweet', function (tweet) {
         console.log(tweet)
-        if (tweet.extended_tweet.full_text.includes('House members')) return;
+        if (tweet.extended_tweet.full_text.includes('National Marrow Donor')) return;
         var url = "https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str;
         if (tweet.user.id_str == '75916180'){
           try {
