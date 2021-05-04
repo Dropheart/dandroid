@@ -24,10 +24,7 @@ module.exports = (client) => {
       var stream = T.stream('statuses/filter', { follow: twitterAccs });
       console.log('Stream enabled for: @imaginedragons, @danreynolds, @danielplatzman, @waynesermon, @benamckee');
       stream.on('tweet', function (tweet) {
-        console.log(tweet)
-        if (tweet.truncated = true) {
-          if (tweet.extended_tweet.full_text.includes('National Marrow Donor') && tweet.extended_tweet.full_text.includes('clown')) return;
-        }
+        console.log(tweet);
         var url = "https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str;
         if (tweet.user.id_str == '75916180'){
           try {
@@ -55,6 +52,11 @@ module.exports = (client) => {
           } 
         } else if (tweet.user.id_str == '567474604'){
           try {
+            if (tweet.truncated = true) {
+              if ((tweet.extended_tweet.full_text.includes('National Marrow Donor')) && (tweet.extended_tweet.full_text.includes('clown'))) {
+                return;
+              }
+            }
             webhookBen.send(url);
           } catch (error) {
                 console.error(error);
