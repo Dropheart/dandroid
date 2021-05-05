@@ -52,7 +52,7 @@ module.exports = (client) => {
           } 
         } else if (tweet.user.id_str == '567474604'){
           try {
-            if (tweet.truncated = true) {
+            if (tweet.truncated == true) {
               if ((tweet.extended_tweet.full_text.includes('National Marrow Donor')) && (tweet.extended_tweet.full_text.includes('clown'))) {
                 return;
               }
