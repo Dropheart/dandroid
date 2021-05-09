@@ -52,13 +52,15 @@ module.exports = (client) => {
           } 
         } else if (tweet.user.id_str == '567474604'){
           try {
-            if (tweet.truncated == true) {
-              if ((tweet.extended_tweet.full_text.includes('National Marrow Donor')) && (tweet.extended_tweet.full_text.includes('clown'))) {
-                return;
-              }
+            // if (tweet.truncated == true) {
+            //  if ((tweet.extended_tweet.full_text.includes('National Marrow Donor')) && (tweet.extended_tweet.full_text.includes('clown'))) {
+            //    return;
+            //  }
+            //}
+            if (!(tweet.in_reply_to_status_id && tweet.in_reply_to_status_id_str && tweet.in_reply_to_user_id && in_reply_to_user_id_str && in_reply_to_screen_name)) {
+              webhookBen.send(url);
             }
-            webhookBen.send(url);
-          } catch (error) {
+            } catch (error) {
                 console.error(error);
           } 
         }
