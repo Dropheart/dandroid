@@ -23,4 +23,4 @@ const client = new MyClient();
 client.login(config.token);
 client.once('ready', () => console.log(`Logged in as ${client.user.username}`))
 require("./newsfeed/twitter.js")(client);
-require("./newsfeed/reddit.js")(client);
+require("./newsfeed/tempreddit.js")(client);
