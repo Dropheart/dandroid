@@ -1,4 +1,4 @@
-const { AkairoClient, CommandHandler } = require('discord-akairo');
+const { AkairoClient, CommandHandler, ListenerHandler } = require('discord-akairo');
 const config = require("./config.json");
 
 class MyClient extends AkairoClient {
@@ -6,7 +6,9 @@ class MyClient extends AkairoClient {
         super({
             ownerID: config.ownerids
         }, {
-            disableMentions: 'everyone'
+            disableMentions: 'everyone',
+            ws: {intents: 4610}
+
         });
 
         this.commandHandler = new CommandHandler(this, {
@@ -14,6 +16,12 @@ class MyClient extends AkairoClient {
             prefix: config.prefix
         });
 
+        this.listenerHandler = new ListenerHandler(this, {
+            directory: './listeners'
+        });
+
+        this.commandHandler.useListenerHandler(this.listenerHandler);
+        this.listenerHandler.loadAll();
         this.commandHandler.loadAll();
         console.log('Loaded all commands!')
     }
