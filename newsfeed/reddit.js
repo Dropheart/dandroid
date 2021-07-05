@@ -1,19 +1,29 @@
-
 module.exports = async (client) => {
 
-    const { MessageEmbed } = require('discord.js')
-    reddit = require('reddit-snooper')
-    config = require('../config.json')
+    const { MessageEmbed } = require('discord.js');
+    const { SubmissionStream } = require('snoostorm');
+    Snoowrap = require('snoowrap');
+    config = require('../config.json');
     redditchannel = await client.channels.fetch(config.redditChannel);
-    let url = "httpS://reddit.com/"
+    let url = "httpS://reddit.com/";
 
-    snooper = new reddit({
-        automatic_retries: true,
-        api_requests_per_minute: 60
-    })
+    const wrapper = new Snoowrap({
+        userAgent: config.reddit_userAgent,
+        clientId: config.reddit_clientID,
+        clientSecret: config.reddit_clientSecret,
+        refreshToken: config.reddit_refreshToken
+    });
 
-    snooper.watcher.getPostWatcher('imaginedragons')
-    .on('post', function(post) {
+    const submissions = new SubmissionStream(wrapper, {
+        subreddit: "imaginedragons",
+        limit: 1,
+        pollTime: 2000,
+    });
+
+    submissions.on("item", console.log);
+
+    // ToDo: Change embed Builder to work with Snoostorm
+    /*submissions.on('item', function(post) {
         if (url == post.data.url) {
             return;
         }
@@ -43,5 +53,5 @@ module.exports = async (client) => {
         client.channels.cache.get(config.redditChannel).send(embed)
 
     })
-    .on('error', console.error)
+    .on('error', console.error)*/
 }
