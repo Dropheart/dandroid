@@ -44,7 +44,7 @@ module.exports = async (client) => {
         }
 
 
-        client.channels.cache.get(config.redditChannel).send(embed);
+        redditchannel.send(embed);
     })
     .on('error', console.error);
 }
