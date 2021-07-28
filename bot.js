@@ -7,7 +7,7 @@ class MyClient extends AkairoClient {
             ownerID: config.ownerids
         }, {
             disableMentions: 'everyone',
-            ws: {intents: 4610}
+            ws: {intents: 4611}
 
         });
 
