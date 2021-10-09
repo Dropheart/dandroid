@@ -57,7 +57,7 @@ module.exports = (client) => {
             //    return;
             //  }
             //}
-            if (!(tweet.in_reply_to_status_id && tweet.in_reply_to_status_id_str && tweet.in_reply_to_user_id && in_reply_to_user_id_str && in_reply_to_screen_name)) {
+            if (!(tweet.in_reply_to_status_id && tweet.in_reply_to_status_id_str && tweet.in_reply_to_user_id && tweet.in_reply_to_user_id_str && tweet.in_reply_to_screen_name)) {
               webhookBen.send(url);
             }
             } catch (error) {
