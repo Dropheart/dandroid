@@ -55,7 +55,6 @@ const back = new MessageActionRow()
 module.exports = async (client, interaction) => {
 
     if (interaction.commandName == 'roles') {
-            console.log(interaction)
             await interaction.reply({ content: 'Choose a category.', components: [main], ephemeral: true })
     }
 
