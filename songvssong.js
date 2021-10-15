@@ -123,7 +123,10 @@ module.exports = async (client) => {
                 ["Cutthroat", "https://www.youtube.com/watch?v=89xtgEk9jTo"],
                 ["No Time For Toxic People", "https://www.youtube.com/watch?v=wJt2qKPZpsk"],
                 ["One Day", "https://www.youtube.com/watch?v=NzImKCeQnX0"],
-                ["Imagine Dragons (by Ragged Insomnia)", "https://www.youtube.com/watch?v=5hNq_7xtVl0"]];
+                ["Imagine Dragons (by Ragged Insomnia)", "https://www.youtube.com/watch?v=5hNq_7xtVl0"],
+                ["Easy", "https://www.youtube.com/watch?v=fPWzQ_z9VYs"],
+                ["Hole Inside Our Chests", "https://www.youtube.com/watch?v=_NuspI2KPBA"],
+                ["Dolphins", "https://www.youtube.com/watch?v=hcEkPLNNSJo"]];
 
     function randomiser() {
         return Math.floor(Math.random() * songs.length);
