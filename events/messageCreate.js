@@ -1,7 +1,7 @@
 const axios = require('axios')
 const regex = /([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])/g
 
-module.exports = (client, message) => {
+module.exports = async (client, message) => {
     if (message.content.indexOf(client.config.prefix) !== 0) return;
 
     // make array of args (args[x] = xth word after command) and get actual command
