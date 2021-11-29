@@ -5,6 +5,7 @@ module.exports = async (client) => {
     Snoowrap = require('snoowrap');
     config = require('../config.json');
     redditchannel = await client.channels.fetch(config.redditChannel);
+    connectedAt = Date.now() / 1000;
     let url = "httpS://reddit.com/";
 
     const wrapper = new Snoowrap({
@@ -23,6 +24,10 @@ module.exports = async (client) => {
     //submissions.on("item", console.log);
 
     submissions.on("item", function(post) {
+        if (connectedAt > post.created_utc) {
+            return;
+        }
+
         url = "https://reddit.com" + post.permalink;
 
         embed = new MessageEmbed()
