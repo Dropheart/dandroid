@@ -167,6 +167,16 @@ module.exports = async (client, interaction) => {
                     .setLabel('Survivor')
                     .setStyle('SECONDARY')
                     .setEmoji('730510577910153346'),
+                new MessageButton()
+                .setCustomId('servernews')
+                .setLabel('Server News')
+                .setStyle('SECONDARY')
+                .setEmoji('📰'),
+                new MessageButton()
+                .setCustomId('bandnews')
+                .setLabel('Band News')
+                .setStyle('SECONDARY')
+                .setEmoji('🗞️')
             )
             await interaction.update({ content: 'Select your roles.', components: [row, back], ephemeral: true })
         }
@@ -273,6 +283,12 @@ module.exports = async (client, interaction) => {
                 break;
             case 'ask': 
                 giverole(interaction, '867073397225554011', 'Ask Me')
+                break;
+            case 'servernews': 
+                giverole(interaction, '929098859190313043', 'Server News')
+                break;
+            case 'bandnews': 
+                giverole(interaction, '929099005663801425', 'Band News')
                 break;
             case 'back': 
                 await interaction.update({ content: 'Choose a category.', components: [main], ephemeral: true })
