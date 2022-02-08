@@ -39,6 +39,11 @@ const main = new MessageActionRow()
                     label: 'Pronoun roles',
                     description: 'Let everyone know your pronouns.',
                     value: 'third_option',
+                },
+                {
+                    label: 'Language roles',
+                    description: 'Get access to our language channels!',
+                    value: 'forth_option',
                 }
             ])
     )
@@ -168,15 +173,15 @@ module.exports = async (client, interaction) => {
                     .setStyle('SECONDARY')
                     .setEmoji('730510577910153346'),
                 new MessageButton()
-                .setCustomId('servernews')
-                .setLabel('Server News')
-                .setStyle('SECONDARY')
-                .setEmoji('📰'),
+                    .setCustomId('servernews')
+                    .setLabel('Server News')
+                    .setStyle('SECONDARY')
+                    .setEmoji('📰'),
                 new MessageButton()
-                .setCustomId('bandnews')
-                .setLabel('Band News')
-                .setStyle('SECONDARY')
-                .setEmoji('🗞️')
+                    .setCustomId('bandnews')
+                    .setLabel('Band News')
+                    .setStyle('SECONDARY')
+                    .setEmoji('🗞️')
             )
             await interaction.update({ content: 'Select your roles.', components: [row, back], ephemeral: true })
         }
@@ -210,6 +215,56 @@ module.exports = async (client, interaction) => {
                     .setEmoji('💜')
                 )
             await interaction.update({ content: 'Select your roles.', components: [row, back], ephemeral: true })
+        }    
+        else if (interaction.values[0] == 'forth_option') {
+            const row1 = new MessageActionRow()
+                .addComponents(
+                    new MessageButton()
+                    .setCustomId('portuguese')
+                    .setLabel('Portuguese / Português')
+                    .setStyle('SECONDARY')
+                    .setEmoji('🇧🇷'),
+                new MessageButton()
+                    .setCustomId('spanish')
+                    .setLabel('Spanish / Español')
+                    .setStyle('SECONDARY')
+                    .setEmoji('🇪🇸'),
+                new MessageButton()
+                    .setCustomId('dutch')
+                    .setLabel('Dutch / Nederlands')
+                    .setStyle('SECONDARY')
+                    .setEmoji('🇳🇱'),
+                new MessageButton()
+                    .setCustomId('french')
+                    .setLabel('French / Français')
+                    .setStyle('SECONDARY')
+                    .setEmoji('🇫🇷')
+                )
+
+                const row2 = new MessageActionRow()
+                .addComponents(
+                    new MessageButton()
+                    .setCustomId('polish')
+                    .setLabel('Polish / Polskie')
+                    .setStyle('SECONDARY')
+                    .setEmoji('🇵🇱'),
+                new MessageButton()
+                    .setCustomId('german')
+                    .setLabel('German / Deutsch')
+                    .setStyle('SECONDARY')
+                    .setEmoji('🇩🇪'),
+                new MessageButton()
+                    .setCustomId('italian')
+                    .setLabel('Italian / Italiano')
+                    .setStyle('SECONDARY')
+                    .setEmoji('🇮🇹'),
+                new MessageButton()
+                    .setCustomId('persian')
+                    .setLabel('Persian / فارسی')
+                    .setStyle('SECONDARY')
+                    .setEmoji('🇮🇷')
+                )
+            await interaction.update({ content: 'Select your roles.', components: [row1, row2, back], ephemeral: true })
         }    
     }
 
@@ -290,6 +345,30 @@ module.exports = async (client, interaction) => {
             case 'bandnews': 
                 giverole(interaction, '929099005663801425', 'Band News')
                 break;
+            case 'portuguese': 
+                giverole(interaction, '931253056962723930', 'Portuguese')
+                break;
+            case 'spanish': 
+                giverole(interaction, '931253407845597206', 'Spanish')
+                break;
+            case 'dutch': 
+                giverole(interaction, '931253527504883763', 'Dutch')
+                break;
+            case 'french': 
+                giverole(interaction, '931253595473592411', 'French')
+                break;   
+            case 'polish': 
+                giverole(interaction, '940313515212828724', 'Polish')
+                break;      
+            case 'german': 
+                giverole(interaction, '940313648751083540', 'German')
+                break; 
+            case 'italian': 
+                giverole(interaction, '940313717214707764', 'Italian')
+                break; 
+            case 'persian': 
+                giverole(interaction, '940314148770816102', 'Persian')
+                break; 
             case 'back': 
                 await interaction.update({ content: 'Choose a category.', components: [main], ephemeral: true })
                 break;
