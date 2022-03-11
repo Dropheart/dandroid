@@ -68,6 +68,11 @@ module.exports = async (client, interaction) => {
             const row1 = new MessageActionRow()
             .addComponents(
                 new MessageButton()
+                    .setCustomId('bones')
+                    .setLabel('Bones')
+                    .setStyle('SECONDARY')
+                    .setEmoji('951780034786521128'),
+                new MessageButton()
                     .setCustomId('mercury')
                     .setLabel('Mercury')
                     .setStyle('SECONDARY')
@@ -270,6 +275,9 @@ module.exports = async (client, interaction) => {
 
     if (interaction.isButton()) {
         switch (interaction.customId) {
+            case 'bones': 
+                giverole(interaction, '951779255044440165', 'Bones')
+                break
             case 'mercury': 
                 giverole(interaction, '859849506211364885', 'Mercury')
                 break
