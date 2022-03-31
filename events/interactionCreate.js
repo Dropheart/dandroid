@@ -181,7 +181,7 @@ module.exports = async (client, interaction) => {
                     .setCustomId('survivor')
                     .setLabel('Survivor')
                     .setStyle('SECONDARY')
-                    .setEmoji('730510577910153346'),
+                    .setEmoji('🟦'),
                 new MessageButton()
                     .setCustomId('servernews')
                     .setLabel('Server News')
