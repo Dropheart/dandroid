@@ -69,7 +69,7 @@ module.exports = async (client, interaction) => {
             .addComponents(
                 new MessageButton()
                     .setCustomId('raggedinsomnia')
-                    .setLabel('Imagine Dragons by Ragged Insomnia')
+                    .setLabel('Imagine Dragons')
                     .setStyle('SECONDARY')
                     .setEmoji('🟦'),
                 new MessageButton()
