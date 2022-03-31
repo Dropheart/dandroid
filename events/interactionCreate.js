@@ -91,15 +91,15 @@ module.exports = async (client, interaction) => {
                     .setCustomId('cutthroat')
                     .setLabel('Cutthroat')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦'),
-                new MessageButton()
-                    .setCustomId('origins')
-                    .setLabel('Origins')
-                    .setStyle('SECONDARY')
                     .setEmoji('🟦')
             )
             const row2 = new MessageActionRow()
             .addComponents(
+                new MessageButton()
+                    .setCustomId('origins')
+                    .setLabel('Origins')
+                    .setStyle('SECONDARY')
+                    .setEmoji('🟦'),
                 new MessageButton()
                     .setCustomId('natural')
                     .setLabel('Natural')
