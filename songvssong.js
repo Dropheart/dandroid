@@ -134,37 +134,119 @@ module.exports = async (client) => {
         return Math.floor(Math.random() * songs.length);
     }
 
-    let scheduledMessage = new CronJob('00 00 10,22 * * *', function() {
-        var song1 = randomiser();
-        var song2 = randomiser();
+    // let scheduledMessage = new CronJob('00 00 10,22 * * *', function() {
+    //     var song1 = randomiser();
+    //     var song2 = randomiser();
     
-        while (song1 === song2) {
-            song2 = randomiser();
-        }
+    //     while (song1 === song2) {
+    //         song2 = randomiser();
+    //     }
     
-        console.log("New Song vs. Song Matchup created: " + songs[song1][0] + " vs. " + songs[song2][0]);
+    //     console.log("New Song vs. Song Matchup created: " + songs[song1][0] + " vs. " + songs[song2][0]);
+
+    //     embed = new MessageEmbed()
+    //     .setTitle(songs[song1][0] + ' vs. ' + songs[song2][0])
+    //     .setColor('ff4500')
+    //     .setTimestamp()
+    //     .setDescription('Vote for your favorite song by reacting with 1️⃣ or 2️⃣!')
+    //     .setFooter('Made with ❤️ by Razora#0001')
+    //     .addFields(
+    //         {name: '1️⃣ - ' + songs[song1][0], value: '[YouTube](' + songs[song1][1] + ')', inline: true},
+    //         {name: '2️⃣ - ' + songs[song2][0], value: '[YouTube](' + songs[song2][1] + ')', inline: true}
+    //     );
+
+    //     client.channels.cache.get(config.songvssongChannel).send({ embeds: [embed] }).then(embed => {
+    //         embed.react("1️⃣");
+    //         embed.react("2️⃣");
+    //         embed.startThread({
+    //             name: `${songs[song1][0]} vs ${songs[song2][0]} Discussion`,
+    //             autoArchiveDuration: 1440,
+    //             reason: 'New daily discussion, big pogs.'
+    //         })
+    //     });
+    // }, null, true, 'Europe/Berlin');
+
+    // scheduledMessage.start();
+
+    let idvsid = new CronJob('00 00 22 31 2 *', function() {
+    
+        console.log("New Song vs. Song Matchup created: Imagine Dragons vs Imagine Dragons");
 
         embed = new MessageEmbed()
-        .setTitle(songs[song1][0] + ' vs. ' + songs[song2][0])
+        .setTitle('Imagine Dragons vs. Imagine Dragons')
         .setColor('ff4500')
         .setTimestamp()
         .setDescription('Vote for your favorite song by reacting with 1️⃣ or 2️⃣!')
-        .setFooter('Made with ❤️ by Razora#0001')
+        .setFooter('Made with 💙 by Razora#0001')
         .addFields(
-            {name: '1️⃣ - ' + songs[song1][0], value: '[YouTube](' + songs[song1][1] + ')', inline: true},
-            {name: '2️⃣ - ' + songs[song2][0], value: '[YouTube](' + songs[song2][1] + ')', inline: true}
+            {name: '1️⃣ - Imagine Dragons', value: '[YouTube](https://www.youtube.com/watch?v=5hNq_7xtVl0)', inline: true},
+            {name: '2️⃣ - Imagine Dragons', value: '[YouTube](https://www.youtube.com/watch?v=5hNq_7xtVl0)', inline: true}
         );
 
         client.channels.cache.get(config.songvssongChannel).send({ embeds: [embed] }).then(embed => {
             embed.react("1️⃣");
             embed.react("2️⃣");
             embed.startThread({
-                name: `${songs[song1][0]} vs ${songs[song2][0]} Discussion`,
+                name: `Imagine Dragons vs Imagine Dragons Discussion`,
                 autoArchiveDuration: 1440,
                 reason: 'New daily discussion, big pogs.'
             })
         });
     }, null, true, 'Europe/Berlin');
 
-    scheduledMessage.start();
+    let idvsboots = new CronJob('00 00 10 1 3 *', function() {
+    
+        console.log("New Song vs. Song Matchup created: Imagine Dragons vs Boots");
+
+        embed = new MessageEmbed()
+        .setTitle('Imagine Dragons vs. Boots')
+        .setColor('ff4500')
+        .setTimestamp()
+        .setDescription('Vote for your favorite song by reacting with 1️⃣ or 2️⃣!')
+        .setFooter('Made with 💙 by Razora#0001')
+        .addFields(
+            {name: '1️⃣ - Imagine Dragons', value: '[YouTube](https://www.youtube.com/watch?v=5hNq_7xtVl0)', inline: true},
+            {name: '2️⃣ - Boots', value: '[YouTube](https://www.youtube.com/watch?v=MCLwkBnFiCE)', inline: true}
+        );
+
+        client.channels.cache.get(config.songvssongChannel).send({ embeds: [embed] }).then(embed => {
+            embed.react("1️⃣");
+            embed.react("2️⃣");
+            embed.startThread({
+                name: `Imagine Dragons vs Boots Discussion`,
+                autoArchiveDuration: 1440,
+                reason: 'New daily discussion, big pogs.'
+            })
+        });
+    }, null, true, 'Europe/Berlin');
+
+    let idvsid2 = new CronJob('00 00 22 1 3 *', function() {
+    
+        console.log("New Song vs. Song Matchup created: Imagine Dragons vs Imagine Dragons");
+
+        embed = new MessageEmbed()
+        .setTitle('Imagine Dragons vs. Imagine Dragons')
+        .setColor('ff4500')
+        .setTimestamp()
+        .setDescription('Vote for your favorite song by reacting with 1️⃣ or 2️⃣!')
+        .setFooter('Made with 💙 by Razora#0001')
+        .addFields(
+            {name: '1️⃣ - Imagine Dragons', value: '[YouTube](https://www.youtube.com/watch?v=5hNq_7xtVl0)', inline: true},
+            {name: '2️⃣ - Imagine Dragons', value: '[YouTube](https://www.youtube.com/watch?v=5hNq_7xtVl0)', inline: true}
+        );
+
+        client.channels.cache.get(config.songvssongChannel).send({ embeds: [embed] }).then(embed => {
+            embed.react("1️⃣");
+            embed.react("2️⃣");
+            embed.startThread({
+                name: `Imagine Dragons vs Imagine Dragons Discussion (fixed)`,
+                autoArchiveDuration: 1440,
+                reason: 'New daily discussion, big pogs.'
+            })
+        });
+    }, null, true, 'Europe/Berlin');
+
+    idvsid.start();
+    idvsboots.start();
+    idvsid2.start();
 }
