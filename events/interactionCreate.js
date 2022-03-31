@@ -71,7 +71,7 @@ module.exports = async (client, interaction) => {
                     .setCustomId('raggedinsomnia')
                     .setLabel('Imagine Dragons by Ragged Insomnia')
                     .setStyle('SECONDARY')
-                    .setEmoji('959178806411808778'),
+                    .setEmoji('🟦'),
                 new MessageButton()
                     .setCustomId('bones')
                     .setLabel('Bones')
