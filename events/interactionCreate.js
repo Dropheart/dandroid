@@ -68,6 +68,11 @@ module.exports = async (client, interaction) => {
             const row1 = new MessageActionRow()
             .addComponents(
                 new MessageButton()
+                    .setCustomId('raggedinsomnia')
+                    .setLabel('Imagine Dragons by Ragged Insomnia')
+                    .setStyle('SECONDARY')
+                    .setEmoji('959178806411808778'),
+                new MessageButton()
                     .setCustomId('bones')
                     .setLabel('Bones')
                     .setStyle('SECONDARY')
@@ -275,6 +280,9 @@ module.exports = async (client, interaction) => {
 
     if (interaction.isButton()) {
         switch (interaction.customId) {
+            case 'raggedinsomnia': 
+                giverole(interaction, '959200581128429638', 'Imagine Dragons by Ragged Insomnia')
+                break
             case 'bones': 
                 giverole(interaction, '951779255044440165', 'Bones')
                 break
