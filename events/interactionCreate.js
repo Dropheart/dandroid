@@ -78,6 +78,11 @@ module.exports = async (client, interaction) => {
                     .setStyle('SECONDARY')
                     .setEmoji('959743140061933598'),
                 new MessageButton()
+                    .setCustomId('enemy')
+                    .setLabel('Enemy')
+                    .setStyle('SECONDARY')
+                    .setEmoji('959768242224762880'),
+                new MessageButton()
                     .setCustomId('mercury')
                     .setLabel('Mercury')
                     .setStyle('SECONDARY')
@@ -86,15 +91,15 @@ module.exports = async (client, interaction) => {
                     .setCustomId('followyou')
                     .setLabel('Follow You')
                     .setStyle('SECONDARY')
-                    .setEmoji('959761175615254598'),
+                    .setEmoji('959761175615254598')
+            )
+            const row2 = new MessageActionRow()
+            .addComponents(
                 new MessageButton()
                     .setCustomId('cutthroat')
                     .setLabel('Cutthroat')
                     .setStyle('SECONDARY')
-                    .setEmoji('959761175669772288')
-            )
-            const row2 = new MessageActionRow()
-            .addComponents(
+                    .setEmoji('959761175669772288'),
                 new MessageButton()
                     .setCustomId('origins')
                     .setLabel('Origins')
@@ -114,15 +119,15 @@ module.exports = async (client, interaction) => {
                     .setCustomId('ntm')
                     .setLabel('Next To Me')
                     .setStyle('SECONDARY')
-                    .setEmoji('959761983572430858'),
+                    .setEmoji('959761983572430858')
+            )
+            const row3 = new MessageActionRow()
+            .addComponents(
                 new MessageButton()
                     .setCustomId('evolve')
                     .setLabel('Evolve')
                     .setStyle('SECONDARY')
-                    .setEmoji('959761175686578176')
-            )
-            const row3 = new MessageActionRow()
-            .addComponents(
+                    .setEmoji('959761175686578176'),
                 new MessageButton()
                     .setCustomId('roots')
                     .setLabel('Roots')
@@ -285,6 +290,9 @@ module.exports = async (client, interaction) => {
                 break
             case 'bones': 
                 giverole(interaction, '951779255044440165', 'Bones')
+                break
+            case 'enemy': 
+                giverole(interaction, '959767458212896779', 'Enemy')
                 break
             case 'mercury': 
                 giverole(interaction, '859849506211364885', 'Mercury')
