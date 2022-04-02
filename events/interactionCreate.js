@@ -76,22 +76,22 @@ module.exports = async (client, interaction) => {
                     .setCustomId('bones')
                     .setLabel('Bones')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦'),
+                    .setEmoji('959743140061933598'),
                 new MessageButton()
                     .setCustomId('mercury')
                     .setLabel('Mercury')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦'),
+                    .setEmoji('959743140955320361'),
                 new MessageButton()
                     .setCustomId('followyou')
                     .setLabel('Follow You')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦'),
+                    .setEmoji('959761175615254598'),
                 new MessageButton()
                     .setCustomId('cutthroat')
                     .setLabel('Cutthroat')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦')
+                    .setEmoji('959761175669772288')
             )
             const row2 = new MessageActionRow()
             .addComponents(
@@ -99,27 +99,27 @@ module.exports = async (client, interaction) => {
                     .setCustomId('origins')
                     .setLabel('Origins')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦'),
+                    .setEmoji('959761175351029761'),
                 new MessageButton()
                     .setCustomId('natural')
                     .setLabel('Natural')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦'),
+                    .setEmoji('959761797387272263'),
                 new MessageButton()
                     .setCustomId('btby')
                     .setLabel('Born To Be Yours')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦'),
+                    .setEmoji('959761176202452992'),
                 new MessageButton()
                     .setCustomId('ntm')
                     .setLabel('Next To Me')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦'),
+                    .setEmoji('959761983572430858'),
                 new MessageButton()
                     .setCustomId('evolve')
                     .setLabel('Evolve')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦')
+                    .setEmoji('959761175686578176')
             )
             const row3 = new MessageActionRow()
             .addComponents(
@@ -127,22 +127,22 @@ module.exports = async (client, interaction) => {
                     .setCustomId('roots')
                     .setLabel('Roots')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦'),
+                    .setEmoji('959762205463683093'),
                 new MessageButton()
                     .setCustomId('smokeplusmirrors')
                     .setLabel('Smoke + Mirrors')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦'),
+                    .setEmoji('959761329420402688'),
                 new MessageButton()
                     .setCustomId('nightvisions')
                     .setLabel('Night Visions')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦'),
+                    .setEmoji('959762371834953778'),
                 new MessageButton()
                     .setCustomId('continuedsilence')
                     .setLabel('Continued Silence EP')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦')
+                    .setEmoji('959762501044690944')
             )
             const row4 = new MessageActionRow()
             .addComponents(
@@ -150,22 +150,22 @@ module.exports = async (client, interaction) => {
                     .setCustomId('itstime')
                     .setLabel('It\'s Time EP')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦'),
+                    .setEmoji('959762676085588059'),
                 new MessageButton()
                     .setCustomId('hellandsilence')
                     .setLabel('Hell and Silence EP')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦'),
+                    .setEmoji('959762676496617532'),
                 new MessageButton()
                     .setCustomId('imaginedragons')
                     .setLabel('Imagine Dragons EP')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦'),
+                    .setEmoji('959762675146051595'),
                 new MessageButton()
                     .setCustomId('speaktome')
                     .setLabel('Speak To Me EP')
                     .setStyle('SECONDARY')
-                    .setEmoji('🟦')
+                    .setEmoji('959762676102344754')
             )
             await interaction.update({ content: 'Select your roles.', components: [row1, row2, row3, row4, back], ephemeral: true })
         }
