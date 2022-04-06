@@ -148,15 +148,15 @@ module.exports = async (client, interaction) => {
                     .setCustomId('nightvisions')
                     .setLabel('Night Visions')
                     .setStyle('SECONDARY')
-                    .setEmoji('959762371834953778'),
+                    .setEmoji('959762371834953778')
+            )
+            const row4 = new MessageActionRow()
+            .addComponents(
                 new MessageButton()
                     .setCustomId('continuedsilence')
                     .setLabel('Continued Silence EP')
                     .setStyle('SECONDARY')
-                    .setEmoji('959762501044690944')
-            )
-            const row4 = new MessageActionRow()
-            .addComponents(
+                    .setEmoji('959762501044690944'),
                 new MessageButton()
                     .setCustomId('itstime')
                     .setLabel('It\'s Time EP')
