@@ -68,6 +68,11 @@ module.exports = async (client, interaction) => {
             const row1 = new MessageActionRow()
             .addComponents(
                 new MessageButton()
+                    .setCustomId('mercuryact2')
+                    .setLabel('Mercury - Act 2')
+                    .setStyle('SECONDARY')
+                    .setEmoji('961302059301371934'),
+                new MessageButton()
                     .setCustomId('raggedinsomnia')
                     .setLabel('Imagine Dragons')
                     .setStyle('SECONDARY')
@@ -84,17 +89,17 @@ module.exports = async (client, interaction) => {
                     .setEmoji('959768242224762880'),
                 new MessageButton()
                     .setCustomId('mercury')
-                    .setLabel('Mercury')
+                    .setLabel('Mercury - Act 1')
                     .setStyle('SECONDARY')
-                    .setEmoji('959743140955320361'),
+                    .setEmoji('959743140955320361')
+            )
+            const row2 = new MessageActionRow()
+            .addComponents(
                 new MessageButton()
                     .setCustomId('followyou')
                     .setLabel('Follow You')
                     .setStyle('SECONDARY')
-                    .setEmoji('959761175615254598')
-            )
-            const row2 = new MessageActionRow()
-            .addComponents(
+                    .setEmoji('959761175615254598'),
                 new MessageButton()
                     .setCustomId('cutthroat')
                     .setLabel('Cutthroat')
@@ -115,14 +120,15 @@ module.exports = async (client, interaction) => {
                     .setLabel('Born To Be Yours')
                     .setStyle('SECONDARY')
                     .setEmoji('959761176202452992'),
+                
+            )
+            const row3 = new MessageActionRow()
+            .addComponents(
                 new MessageButton()
                     .setCustomId('ntm')
                     .setLabel('Next To Me')
                     .setStyle('SECONDARY')
-                    .setEmoji('959761983572430858')
-            )
-            const row3 = new MessageActionRow()
-            .addComponents(
+                    .setEmoji('959761983572430858'),
                 new MessageButton()
                     .setCustomId('evolve')
                     .setLabel('Evolve')
@@ -285,6 +291,9 @@ module.exports = async (client, interaction) => {
 
     if (interaction.isButton()) {
         switch (interaction.customId) {
+            case 'mercuryact2': 
+                giverole(interaction, '961300803337982044', 'Mercury - Act 2')
+                break
             case 'raggedinsomnia': 
                 giverole(interaction, '959200581128429638', 'Imagine Dragons by Ragged Insomnia')
                 break
@@ -295,7 +304,7 @@ module.exports = async (client, interaction) => {
                 giverole(interaction, '959767458212896779', 'Enemy')
                 break
             case 'mercury': 
-                giverole(interaction, '859849506211364885', 'Mercury')
+                giverole(interaction, '859849506211364885', 'Mercury - Act 1')
                 break
             case 'followyou': 
                 giverole(interaction, '819336861025566720', 'Follow You')
