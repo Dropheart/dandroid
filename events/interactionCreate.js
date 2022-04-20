@@ -27,12 +27,12 @@ const main = new MessageActionRow()
             .addOptions([
                 {
                     label: 'Vanity roles',
-                    description: 'Album and single roles, to rep your love.',
+                    description: 'Colored Album and single roles to change the username color.',
                     value: 'first_option',
                 },
                 {
                     label: 'Event roles',
-                    description: 'Get notified for new events like Survivor rounds.',
+                    description: 'Get notified for new events like Survivor rounds, news or voice chats.',
                     value: 'second_option',
                 },
                 {
@@ -202,7 +202,12 @@ module.exports = async (client, interaction) => {
                     .setCustomId('bandnews')
                     .setLabel('Band News')
                     .setStyle('SECONDARY')
-                    .setEmoji('🗞️')
+                    .setEmoji('🗞️'),
+                new MessageButton()
+                    .setCustomId('voicechat')
+                    .setLabel('Voice Chatters')
+                    .setStyle('SECONDARY')
+                    .setEmoji('🔊')
             )
             await interaction.update({ content: 'Select your roles.', components: [row, back], ephemeral: true })
         }
@@ -291,6 +296,9 @@ module.exports = async (client, interaction) => {
 
     if (interaction.isButton()) {
         switch (interaction.customId) {
+            case 'voicechat': 
+                giverole(interaction, '966404137266839582', 'Voice Chatters')
+                break
             case 'mercuryact2': 
                 giverole(interaction, '961300803337982044', 'Mercury - Act 2')
                 break
