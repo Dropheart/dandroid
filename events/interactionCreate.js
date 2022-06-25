@@ -68,11 +68,6 @@ module.exports = async (client, interaction) => {
             const row1 = new MessageActionRow()
             .addComponents(
                 new MessageButton()
-                    .setCustomId('sharks')
-                    .setLabel('Sharks')
-                    .setStyle('SECONDARY')
-                    .setEmoji('990303399192952862'),
-                new MessageButton()
                     .setCustomId('mercuryact2')
                     .setLabel('Mercury - Act 2')
                     .setStyle('SECONDARY')
@@ -92,14 +87,14 @@ module.exports = async (client, interaction) => {
                     .setLabel('Enemy')
                     .setStyle('SECONDARY')
                     .setEmoji('959768242224762880'),
-            )
-            const row2 = new MessageActionRow()
-            .addComponents(
                 new MessageButton()
                     .setCustomId('mercury')
                     .setLabel('Mercury - Act 1')
                     .setStyle('SECONDARY')
-                    .setEmoji('959743140955320361'),
+                    .setEmoji('959743140955320361')
+            )
+            const row2 = new MessageActionRow()
+            .addComponents(
                 new MessageButton()
                     .setCustomId('followyou')
                     .setLabel('Follow You')
@@ -120,14 +115,15 @@ module.exports = async (client, interaction) => {
                     .setLabel('Natural')
                     .setStyle('SECONDARY')
                     .setEmoji('959761797387272263'),
-            )
-            const row3 = new MessageActionRow()
-            .addComponents(
                 new MessageButton()
                     .setCustomId('btby')
                     .setLabel('Born To Be Yours')
                     .setStyle('SECONDARY')
                     .setEmoji('959761176202452992'),
+                
+            )
+            const row3 = new MessageActionRow()
+            .addComponents(
                 new MessageButton()
                     .setCustomId('ntm')
                     .setLabel('Next To Me')
@@ -148,14 +144,14 @@ module.exports = async (client, interaction) => {
                     .setLabel('Smoke + Mirrors')
                     .setStyle('SECONDARY')
                     .setEmoji('959761329420402688'),
-            )
-            const row4 = new MessageActionRow()
-            .addComponents(
                 new MessageButton()
                     .setCustomId('nightvisions')
                     .setLabel('Night Visions')
                     .setStyle('SECONDARY')
-                    .setEmoji('959762371834953778'),
+                    .setEmoji('959762371834953778')
+            )
+            const row4 = new MessageActionRow()
+            .addComponents(
                 new MessageButton()
                     .setCustomId('continuedsilence')
                     .setLabel('Continued Silence EP')
@@ -176,16 +172,13 @@ module.exports = async (client, interaction) => {
                     .setLabel('Imagine Dragons EP')
                     .setStyle('SECONDARY')
                     .setEmoji('959762675146051595'),
-            )
-            const row5 = new MessageActionRow()
-            .addComponents(
                 new MessageButton()
                     .setCustomId('speaktome')
                     .setLabel('Speak To Me EP')
                     .setStyle('SECONDARY')
                     .setEmoji('959762676102344754')
             )
-            await interaction.update({ content: 'Select your roles.', components: [row1, row2, row3, row4, row5, back], ephemeral: true })
+            await interaction.update({ content: 'Select your roles.', components: [row1, row2, row3, row4, back], ephemeral: true })
         }
         else if (interaction.values[0] == 'second_option') {
             const row = new MessageActionRow()
@@ -303,9 +296,6 @@ module.exports = async (client, interaction) => {
 
     if (interaction.isButton()) {
         switch (interaction.customId) {
-            case 'sharks': 
-                giverole(interaction, '988195824175554570', 'Sharks')
-                break
             case 'voicechat': 
                 giverole(interaction, '966404137266839582', 'Voice Chatters')
                 break
