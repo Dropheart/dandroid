@@ -153,7 +153,7 @@ module.exports = async (client, interaction) => {
             .addComponents(
                 new MessageButton()
                     .setCustomId('page2')
-                    .setLabel('➡️')
+                    .setLabel('Next Page ➡️')
                     .setStyle('PRIMARY')
             )
             await interaction.update({ content: 'Select your roles. (Page 1/2)', components: [row1, row2, row3, page2, back], ephemeral: true })
@@ -483,7 +483,7 @@ module.exports = async (client, interaction) => {
                 .addComponents(
                     new MessageButton()
                         .setCustomId('page2')
-                        .setLabel('➡️')
+                        .setLabel('Next Page ➡️')
                         .setStyle('PRIMARY')
                 )
                 await interaction.update({ content: 'Select your roles. (Page 1/2)', components: [row1, row2, row3, page2, back], ephemeral: true })
@@ -529,7 +529,7 @@ module.exports = async (client, interaction) => {
                 .addComponents(
                     new MessageButton()
                         .setCustomId('page1')
-                        .setLabel('⬅️')
+                        .setLabel('Previous Page ⬅️')
                         .setStyle('PRIMARY')
                 )
                 await interaction.update({ content: 'Select your roles. (Page 2/2)', components: [row4, row5, page1, back], ephemeral: true })
