@@ -71,7 +71,7 @@ module.exports = async (client, interaction) => {
                     .setCustomId('sharks')
                     .setLabel('Sharks')
                     .setStyle('SECONDARY')
-                    .setEmoji('990303399192952862'),
+                    .setEmoji('990302669119815750'),
                 new MessageButton()
                     .setCustomId('mercuryact2')
                     .setLabel('Mercury - Act 2')
