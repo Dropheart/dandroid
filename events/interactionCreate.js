@@ -68,6 +68,11 @@ module.exports = async (client, interaction) => {
             const row1 = new MessageActionRow()
             .addComponents(
                 new MessageButton()
+                    .setCustomId('sharks')
+                    .setLabel('Sharks')
+                    .setStyle('SECONDARY')
+                    .setEmoji('990303399192952862'),
+                new MessageButton()
                     .setCustomId('mercuryact2')
                     .setLabel('Mercury - Act 2')
                     .setStyle('SECONDARY')
@@ -87,14 +92,14 @@ module.exports = async (client, interaction) => {
                     .setLabel('Enemy')
                     .setStyle('SECONDARY')
                     .setEmoji('959768242224762880'),
+            )
+            const row2 = new MessageActionRow()
+            .addComponents(
                 new MessageButton()
                     .setCustomId('mercury')
                     .setLabel('Mercury - Act 1')
                     .setStyle('SECONDARY')
-                    .setEmoji('959743140955320361')
-            )
-            const row2 = new MessageActionRow()
-            .addComponents(
+                    .setEmoji('959743140955320361'),
                 new MessageButton()
                     .setCustomId('followyou')
                     .setLabel('Follow You')
@@ -114,16 +119,15 @@ module.exports = async (client, interaction) => {
                     .setCustomId('natural')
                     .setLabel('Natural')
                     .setStyle('SECONDARY')
-                    .setEmoji('959761797387272263'),
+                    .setEmoji('959761797387272263'), 
+            )
+            const row3 = new MessageActionRow()
+            .addComponents(
                 new MessageButton()
                     .setCustomId('btby')
                     .setLabel('Born To Be Yours')
                     .setStyle('SECONDARY')
                     .setEmoji('959761176202452992'),
-                
-            )
-            const row3 = new MessageActionRow()
-            .addComponents(
                 new MessageButton()
                     .setCustomId('ntm')
                     .setLabel('Next To Me')
@@ -143,42 +147,16 @@ module.exports = async (client, interaction) => {
                     .setCustomId('smokeplusmirrors')
                     .setLabel('Smoke + Mirrors')
                     .setStyle('SECONDARY')
-                    .setEmoji('959761329420402688'),
-                new MessageButton()
-                    .setCustomId('nightvisions')
-                    .setLabel('Night Visions')
-                    .setStyle('SECONDARY')
-                    .setEmoji('959762371834953778')
+                    .setEmoji('959761329420402688'),     
             )
-            const row4 = new MessageActionRow()
+            const page2 = new MessageActionRow()
             .addComponents(
                 new MessageButton()
-                    .setCustomId('continuedsilence')
-                    .setLabel('Continued Silence EP')
-                    .setStyle('SECONDARY')
-                    .setEmoji('959762501044690944'),
-                new MessageButton()
-                    .setCustomId('itstime')
-                    .setLabel('It\'s Time EP')
-                    .setStyle('SECONDARY')
-                    .setEmoji('959762676085588059'),
-                new MessageButton()
-                    .setCustomId('hellandsilence')
-                    .setLabel('Hell and Silence EP')
-                    .setStyle('SECONDARY')
-                    .setEmoji('959762676496617532'),
-                new MessageButton()
-                    .setCustomId('imaginedragons')
-                    .setLabel('Imagine Dragons EP')
-                    .setStyle('SECONDARY')
-                    .setEmoji('959762675146051595'),
-                new MessageButton()
-                    .setCustomId('speaktome')
-                    .setLabel('Speak To Me EP')
-                    .setStyle('SECONDARY')
-                    .setEmoji('959762676102344754')
+                    .setCustomId('page2')
+                    .setLabel('➡️')
+                    .setStyle('PRIMARY')
             )
-            await interaction.update({ content: 'Select your roles.', components: [row1, row2, row3, row4, back], ephemeral: true })
+            await interaction.update({ content: 'Select your roles. (Page 1/2)', components: [row1, row2, row3, page2, back], ephemeral: true })
         }
         else if (interaction.values[0] == 'second_option') {
             const row = new MessageActionRow()
@@ -296,6 +274,9 @@ module.exports = async (client, interaction) => {
 
     if (interaction.isButton()) {
         switch (interaction.customId) {
+            case 'sharks': 
+                giverole(interaction, '988195824175554570', 'Sharks')
+                break
             case 'voicechat': 
                 giverole(interaction, '966404137266839582', 'Voice Chatters')
                 break
@@ -413,7 +394,145 @@ module.exports = async (client, interaction) => {
             case 'back': 
                 await interaction.update({ content: 'Choose a category.', components: [main], ephemeral: true })
                 break;
-
+            case 'page1': 
+                const row1 = new MessageActionRow()
+                .addComponents(
+                    new MessageButton()
+                        .setCustomId('sharks')
+                        .setLabel('Sharks')
+                        .setStyle('SECONDARY')
+                        .setEmoji('990303399192952862'),
+                    new MessageButton()
+                        .setCustomId('mercuryact2')
+                        .setLabel('Mercury - Act 2')
+                        .setStyle('SECONDARY')
+                        .setEmoji('963113992388227192'),
+                    new MessageButton()
+                        .setCustomId('raggedinsomnia')
+                        .setLabel('Imagine Dragons')
+                        .setStyle('SECONDARY')
+                        .setEmoji('🟦'),
+                    new MessageButton()
+                        .setCustomId('bones')
+                        .setLabel('Bones')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959743140061933598'),
+                    new MessageButton()
+                        .setCustomId('enemy')
+                        .setLabel('Enemy')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959768242224762880'),
+                )
+                const row2 = new MessageActionRow()
+                .addComponents(
+                    new MessageButton()
+                        .setCustomId('mercury')
+                        .setLabel('Mercury - Act 1')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959743140955320361'),
+                    new MessageButton()
+                        .setCustomId('followyou')
+                        .setLabel('Follow You')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959761175615254598'),
+                    new MessageButton()
+                        .setCustomId('cutthroat')
+                        .setLabel('Cutthroat')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959761175669772288'),
+                    new MessageButton()
+                        .setCustomId('origins')
+                        .setLabel('Origins')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959761175351029761'),
+                    new MessageButton()
+                        .setCustomId('natural')
+                        .setLabel('Natural')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959761797387272263'), 
+                )
+                const row3 = new MessageActionRow()
+                .addComponents(
+                    new MessageButton()
+                        .setCustomId('btby')
+                        .setLabel('Born To Be Yours')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959761176202452992'),
+                    new MessageButton()
+                        .setCustomId('ntm')
+                        .setLabel('Next To Me')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959761983572430858'),
+                    new MessageButton()
+                        .setCustomId('evolve')
+                        .setLabel('Evolve')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959761175686578176'),
+                    new MessageButton()
+                        .setCustomId('roots')
+                        .setLabel('Roots')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959762205463683093'),
+                    new MessageButton()
+                        .setCustomId('smokeplusmirrors')
+                        .setLabel('Smoke + Mirrors')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959761329420402688'),     
+                )
+                const page2 = new MessageActionRow()
+                .addComponents(
+                    new MessageButton()
+                        .setCustomId('page2')
+                        .setLabel('➡️')
+                        .setStyle('PRIMARY')
+                )
+                await interaction.update({ content: 'Select your roles. (Page 1/2)', components: [row1, row2, row3, page2, back], ephemeral: true })
+                break;
+            case 'page2': 
+                const row4 = new MessageActionRow()
+                .addComponents(
+                    new MessageButton()
+                        .setCustomId('nightvisions')
+                        .setLabel('Night Visions')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959762371834953778'),
+                    new MessageButton()
+                        .setCustomId('continuedsilence')
+                        .setLabel('Continued Silence EP')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959762501044690944'),
+                    new MessageButton()
+                        .setCustomId('itstime')
+                        .setLabel('It\'s Time EP')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959762676085588059'),
+                    new MessageButton()
+                        .setCustomId('hellandsilence')
+                        .setLabel('Hell and Silence EP')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959762676496617532'),
+                    new MessageButton()
+                        .setCustomId('imaginedragons')
+                        .setLabel('Imagine Dragons EP')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959762675146051595'),
+                )
+                const row5 = new MessageActionRow()
+                .addComponents(
+                    new MessageButton()
+                        .setCustomId('speaktome')
+                        .setLabel('Speak To Me EP')
+                        .setStyle('SECONDARY')
+                        .setEmoji('959762676102344754')
+                )
+                const page1 = new MessageActionRow()
+                .addComponents(
+                    new MessageButton()
+                        .setCustomId('page1')
+                        .setLabel('⬅️')
+                        .setStyle('PRIMARY')
+                )
+                await interaction.update({ content: 'Select your roles. (Page 2/2)', components: [row4, row5, page1, back], ephemeral: true })
         }
 
     }
