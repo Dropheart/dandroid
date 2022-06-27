@@ -128,7 +128,8 @@ module.exports = async (client) => {
                 ["Hole Inside Our Chests", "https://www.youtube.com/watch?v=_NuspI2KPBA"],
                 ["Dolphins", "https://www.youtube.com/watch?v=hcEkPLNNSJo"],
                 ["Enemy (x J.I.D - from the series Arcane League of Legends)", "https://www.youtube.com/watch?v=D9G1VOjN_84"],
-                ["Bones", "https://www.youtube.com/watch?v=DYed5whEf4g"]];
+                ["Bones", "https://www.youtube.com/watch?v=DYed5whEf4g"],
+                ["Sharks", "https://www.youtube.com/watch?v=Te3_VlimRw0"]];
 
     function randomiser() {
         return Math.floor(Math.random() * songs.length);
