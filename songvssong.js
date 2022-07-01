@@ -129,7 +129,23 @@ module.exports = async (client) => {
                 ["Dolphins", "https://www.youtube.com/watch?v=hcEkPLNNSJo"],
                 ["Enemy (x J.I.D - from the series Arcane League of Legends)", "https://www.youtube.com/watch?v=D9G1VOjN_84"],
                 ["Bones", "https://www.youtube.com/watch?v=DYed5whEf4g"],
-                ["Sharks", "https://www.youtube.com/watch?v=Te3_VlimRw0"]];
+                ["Sharks", "https://www.youtube.com/watch?v=Te3_VlimRw0"],
+                ["Symphony", "https://www.youtube.com/watch?v=f-HjBtN4q6o"],
+                ["I Don't Like Myself", "https://www.youtube.com/watch?v=EJy7K5AWutM"],
+                ["Blur", "https://www.youtube.com/watch?v=so23_c7lXno"],
+                ["Higher Ground", "https://www.youtube.com/watch?v=ZQNSke_9EJ8"],
+                ["Crushed", "https://www.youtube.com/watch?v=kw07O6yFka4"],
+                ["Take It Easy", "https://www.youtube.com/watch?v=mt-qhy4ItfM"],
+                ["Waves", "https://www.youtube.com/watch?v=anLxLPzgIG4"],
+                ["I'm Happy", "https://www.youtube.com/watch?v=-hyfscXeOHY"],
+                ["Ferris Wheel", "https://www.youtube.com/watch?v=5UwEq-OELmY"],
+                ["Peace Of Mind", "https://www.youtube.com/watch?v=3CjIx9K3snI"],
+                ["Sirens", "https://www.youtube.com/watch?v=ogEhe_v3UwM"],
+                ["Tied", "https://www.youtube.com/watch?v=3pyFAx7k-dc"],
+                ["Younger", "https://www.youtube.com/watch?v=FIhonBl-_pM"],
+                ["I Wish", "https://www.youtube.com/watch?v=2uQtt5fdmxU"],
+                ["Continual (feat. Cory Henry)", "https://www.youtube.com/watch?v=2U4Naul7CLg"],
+                ["They Don't Know You Like I Do", "https://www.youtube.com/watch?v=XedldcMKJO0"]];
 
     function randomiser() {
         return Math.floor(Math.random() * songs.length);
