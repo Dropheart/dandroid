@@ -3,7 +3,7 @@
     "@discordjs/rest": "^0.1.0-canary.0",
     "cron": "^1.8.2",
     "discord-api-types": "^0.23.1",
-    "discord.js": "^13.1.0",
+    "discord.js": "^13.3.1",
     "fs": "^0.0.1-security",
     "snoostorm": "^1.5.2",
     "snoowrap": "^1.23.0",
