@@ -151,7 +151,7 @@ module.exports = async (client) => {
         return Math.floor(Math.random() * songs.length);
     }
 
-    let scheduledMessage = new CronJob('00 00 10,23 * * *', function() {
+    let scheduledMessage = new CronJob('00 00 10,22 * * *', function() {
         var song1 = randomiser();
         var song2 = randomiser();
     
