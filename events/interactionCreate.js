@@ -242,16 +242,16 @@ module.exports = async (client, interaction) => {
                     .setCustomId('french')
                     .setLabel('French / Français')
                     .setStyle('SECONDARY')
-                    .setEmoji('🇫🇷')
+                    .setEmoji('🇫🇷'),
+                new MessageButton()
+                    .setCustomId('polish')
+                    .setLabel('Polish / Polskie')
+                    .setStyle('SECONDARY')
+                    .setEmoji('🇵🇱')
                 )
 
                 const row2 = new MessageActionRow()
                 .addComponents(
-                    new MessageButton()
-                    .setCustomId('polish')
-                    .setLabel('Polish / Polskie')
-                    .setStyle('SECONDARY')
-                    .setEmoji('🇵🇱'),
                 new MessageButton()
                     .setCustomId('german')
                     .setLabel('German / Deutsch')
@@ -266,7 +266,17 @@ module.exports = async (client, interaction) => {
                     .setCustomId('persian')
                     .setLabel('Persian / فارسی')
                     .setStyle('SECONDARY')
-                    .setEmoji('🇮🇷')
+                    .setEmoji('🇮🇷'),
+                new MessageButton()
+                    .setCustomId('czech')
+                    .setLabel('Czech / Čeština')
+                    .setStyle('SECONDARY')
+                    .setEmoji('🇨🇿'),
+                new MessageButton()
+                    .setCustomId('slovak')
+                    .setLabel('Slovak / Slovenčina')
+                    .setStyle('SECONDARY')
+                    .setEmoji('🇸🇰')
                 )
             await interaction.update({ content: 'Select your roles.', components: [row1, row2, back], ephemeral: true })
         }    
@@ -390,6 +400,12 @@ module.exports = async (client, interaction) => {
                 break; 
             case 'persian': 
                 giverole(interaction, '940314148770816102', 'Persian')
+                break; 
+            case 'czech': 
+                giverole(interaction, '993548415738843226', 'Czech')
+                break;
+            case 'slovak': 
+                giverole(interaction, '993945658258108496', 'Slovak')
                 break; 
             case 'back': 
                 await interaction.update({ content: 'Choose a category.', components: [main], ephemeral: true })
