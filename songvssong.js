@@ -145,7 +145,10 @@ module.exports = async (client) => {
                 ["Younger", "https://www.youtube.com/watch?v=FIhonBl-_pM"],
                 ["I Wish", "https://www.youtube.com/watch?v=2uQtt5fdmxU"],
                 ["Continual (feat. Cory Henry)", "https://www.youtube.com/watch?v=2U4Naul7CLg"],
-                ["They Don't Know You Like I Do", "https://www.youtube.com/watch?v=XedldcMKJO0"]];
+                ["They Don't Know You Like I Do", "https://www.youtube.com/watch?v=XedldcMKJO0"],
+                ["Love Of Mine - Night Visions Demo", "https://www.youtube.com/watch?v=USxRQ9qQZ4s"],
+                ["Bubble - Night Visions Demo", "https://www.youtube.com/watch?v=0ktP6ZacKGg"]
+            ];
 
     function randomiser() {
         return Math.floor(Math.random() * songs.length);
