@@ -31,31 +31,31 @@ module.exports = (client) => {
       console.log(tweet.includes);
       var url = "https://twitter.com/" + tweet.includes.users[0].username + "/status/" + tweet.data.id;
       console.log(url);
-      if (tweet.author_id == '75916180'){
+      if (tweet.data.author_id == '75916180'){
         try {
           webhookID.send(url);
         } catch (error) {
               console.error(error);
         } 
-      } else if (tweet.author_id == '1450386817'){
+      } else if (tweet.data.author_id == '1450386817'){
         try {
           webhookDan.send(url);
         } catch (error) {
               console.error(error);
         } 
-      } else if (tweet.author_id == '174112306'){
+      } else if (tweet.data.author_id == '174112306'){
         try {
           webhookPlatz.send(url);
         } catch (error) {
               console.error(error);
         } 
-      } else if (tweet.author_id == '551162023'){
+      } else if (tweet.data.author_id == '551162023'){
         try {
           webhookWayne.send(url);
         } catch (error) {
               console.error(error);
         } 
-      } else if (tweet.author_id == '567474604'){
+      } else if (tweet.data.author_id == '567474604'){
         try {
           webhookBen.send(url);
         } catch (error) {
