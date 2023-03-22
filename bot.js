@@ -1,6 +1,10 @@
 // basic imports n things
-const Discord = require("discord.js")
-const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MEMBERS, Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.Intents.FLAGS.DIRECT_MESSAGES] })
+const { Client, IntentsBitField } = require("discord.js")
+
+const botIntents = new IntentsBitField();
+botIntents.add(IntentsBitField.Flags.Guilds, IntentsBitField.Flags.GuildMembers, IntentsBitField.Flags.GuildMessages, IntentsBitField.Flags.DirectMessages);
+
+const client = new Client({ intents: botIntents })
 const config = require("./config.json")
 const fs = require("fs")
 
