@@ -1,6 +1,6 @@
 module.exports = async (client) => {
 
-    const { MessageEmbed } = require('discord.js');
+    const { EmbedBuilder } = require('discord.js');
     const CronJob = require('cron').CronJob;
     config = require('./config.json');
     const songs = [["Speak To Me", "https://www.youtube.com/watch?v=L9vLuHQXP78"], 
@@ -164,7 +164,7 @@ module.exports = async (client) => {
     
         console.log("New Song vs. Song Matchup created: " + songs[song1][0] + " vs. " + songs[song2][0]);
 
-        embed = new MessageEmbed()
+        embed = new EmbedBuilder()
         .setTitle(songs[song1][0] + ' vs. ' + songs[song2][0])
         .setColor('ff4500')
         .setTimestamp()
