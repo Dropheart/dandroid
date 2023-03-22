@@ -12,29 +12,18 @@ const fs = require("fs")
 client.config = config
 
 // bind all events in the events folder to the client
-fs.readdir("./events/", (err, files) => {
-    if (err) return console.error(err)
-    files.forEach((file) => {
-        const event = require(`./events/${file}`);
-        let eventName = file.split(".")[0];
-        client.on(eventName, event.bind(null, client))
-    })
-})
+const eventsPath = path.join(__dirname, 'events');
+const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
-// make a key/value map of command name/command file, to be used in the message event
-// client.commands = new Map();
-
-// fs.readdir("./commands/", (err, files) => {
-//     if (err) return console.error(err);
-//     files.forEach((file) => {
-//         if (!file.endsWith(".js")) return;
-//         let command = require(`./commands/${file}`);
-//         let commandName = file.split(".")[0];
-//         console.log(`Attempting to load command ${commandName}`);
-//         client.commands.set(commandName, command);
-        
-//     })
-// })
+for (const file of eventFiles) {
+	const filePath = path.join(eventsPath, file);
+	const event = require(filePath);
+	if (event.once) {
+		client.once(event.name, (...args) => event.execute(...args));
+	} else {
+		client.on(event.name, (...args) => event.execute(...args));
+	}
+}
 
 client.login(config.token);
 client.once('ready', () => console.log(`Logged in as ${client.user.username}`))
