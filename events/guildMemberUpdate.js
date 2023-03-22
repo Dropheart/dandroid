@@ -4,6 +4,7 @@ module.exports = {
 	name: Events.GuildMemberUpdate,
 	async execute(oldMember, newMember, client) {
         console.log(newMember);
+        console.log(client);
 		if (newMember.guild.id == "226576492782551042") {
             if (oldMember.pending && !newMember.pending) {
                 welcomeChannel = await client.channels.fetch(config.welcomeChannel);
