@@ -1,10 +1,10 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = async (client, oldUser, newUser) => {
     logChannel = await client.channels.fetch("226594976975421441"); // #server-log
 
     if (oldUser.username !== newUser.username) {
-        usernameembed = new MessageEmbed()
+        usernameembed = new EmbedBuilder()
                 .setColor('ffb347')
                 .setTimestamp()
                 .setThumbnail(newUser.displayAvatarURL())
@@ -13,7 +13,7 @@ module.exports = async (client, oldUser, newUser) => {
     }
 
     if (oldUser.discriminator !== newUser.discriminator) {
-        discriminatorembed = new MessageEmbed()
+        discriminatorembed = new EmbedBuilder()
                 .setColor('ffb347')
                 .setTimestamp()
                 .setThumbnail(newUser.displayAvatarURL())

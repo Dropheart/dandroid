@@ -1,31 +1,13 @@
-const { REST } = require('@discordjs/rest');
-const { Routes } = require('discord-api-types/v9');
-const { token } = require('./config.json');
-const fs = require('fs');
+const { REST, Routes } = require('discord.js');
+const { clientId, guildId, token } = require('./config.json');
 
-const commands = [];
-const commandFiles = fs.readdirSync('./slashcommands').filter(file => file.endsWith('.js'));
+const rest = new REST({ version: '10' }).setToken(token);
 
 // Place your client and guild ids here
 const clientId = '818178566037831770';
 const guildId = '226576492782551042';
 
-for (const file of commandFiles) {
-	const command = require(`./slashcommands/${file}`);
-	commands.push(command.data.toJSON());
-}
-
-const rest = new REST({ version: '9' }).setToken(token);
-(async () => {
-	try {
-		console.log('Started refreshing application (/) commands.');
-
-		await rest.delete(
-			Routes.applicationGuildCommand(clientId, guildId, '897267680942358579')
-		);
-
-		console.log('Successfully reloaded application (/) commands.');
-	} catch (error) {
-		console.error(error);
-	}
-})();
+// for guild-based commands
+rest.delete(Routes.applicationGuildCommand(clientId, guildId, '897552853877530624'))
+	.then(() => console.log('Successfully deleted guild command'))
+	.catch(console.error);

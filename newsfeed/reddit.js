@@ -1,6 +1,6 @@
 module.exports = async (client) => {
 
-    const { MessageEmbed } = require('discord.js');
+    const { EmbedBuilder } = require('discord.js');
     const { SubmissionStream } = require('snoostorm');
     Snoowrap = require('snoowrap');
     config = require('../config.json');
@@ -30,7 +30,7 @@ module.exports = async (client) => {
 
         url = "https://reddit.com" + post.permalink;
 
-        embed = new MessageEmbed()
+        embed = new EmbedBuilder()
         .setTitle(post.title)
         .setURL(url)
         .setColor("ff4500")
