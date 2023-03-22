@@ -6,7 +6,8 @@ botIntents.add(IntentsBitField.Flags.Guilds, IntentsBitField.Flags.GuildMembers,
 
 const client = new Client({ intents: botIntents })
 const config = require("./config.json")
-const fs = require("fs")
+const fs = require('node:fs');
+const path = require('node:path');
 
 // makes things easier for us
 client.config = config
