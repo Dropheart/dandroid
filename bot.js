@@ -22,19 +22,19 @@ fs.readdir("./events/", (err, files) => {
 })
 
 // make a key/value map of command name/command file, to be used in the message event
-client.commands = new Map();
+// client.commands = new Map();
 
-fs.readdir("./commands/", (err, files) => {
-    if (err) return console.error(err);
-    files.forEach((file) => {
-        if (!file.endsWith(".js")) return;
-        let command = require(`./commands/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Attempting to load command ${commandName}`);
-        client.commands.set(commandName, command);
+// fs.readdir("./commands/", (err, files) => {
+//     if (err) return console.error(err);
+//     files.forEach((file) => {
+//         if (!file.endsWith(".js")) return;
+//         let command = require(`./commands/${file}`);
+//         let commandName = file.split(".")[0];
+//         console.log(`Attempting to load command ${commandName}`);
+//         client.commands.set(commandName, command);
         
-    })
-})
+//     })
+// })
 
 client.login(config.token);
 client.once('ready', () => console.log(`Logged in as ${client.user.username}`))
