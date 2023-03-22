@@ -1,3 +1,5 @@
+const { Events } = require('discord.js');
+
 module.exports = {
 	name: Events.GuildMemberUpdate,
 	async execute(client, oldMember, newMember) {
