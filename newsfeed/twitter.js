@@ -25,7 +25,7 @@ module.exports = (client) => {
 
     // Check if Stream is running and rules have been applied
     try {
-      const rules = await client.v2.streamRules();
+      const rules = await twitter.v2.streamRules();
       console.log(rules.data);
       console.log('Stream enabled for: @imaginedragons, @danreynolds, @danielplatzman, @waynesermon, @benamckee')
     } catch (error) {
