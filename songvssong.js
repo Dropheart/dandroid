@@ -169,7 +169,7 @@ module.exports = async (client) => {
         .setColor('ff4500')
         .setTimestamp()
         .setDescription('Vote for your favorite song by reacting with 1️⃣ or 2️⃣!')
-        .setFooter('Made with ❤️ by Razora#0001')
+        .setFooter({text: 'Made with ❤️ by Razora#0001'})
         .addFields(
             {name: '1️⃣ - ' + songs[song1][0], value: '[YouTube](' + songs[song1][1] + ')', inline: true},
             {name: '2️⃣ - ' + songs[song2][0], value: '[YouTube](' + songs[song2][1] + ')', inline: true}
