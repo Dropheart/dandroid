@@ -18,7 +18,7 @@ module.exports = async (client) => {
     const submissions = new SubmissionStream(wrapper, {
         subreddit: "imaginedragons",
         limit: 0,
-        pollTime: 2000,
+        pollTime: 10000,
     });
 
     //submissions.on("item", console.log);
