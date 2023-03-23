@@ -16,9 +16,6 @@ module.exports = (client) => {
   client.once('ready', async () => {
     const stream = await twitter.v2.searchStream({ 'user.fields': ['username'], expansions: ['author_id']});
 
-    // Enable reconnect feature
-    stream.autoReconnect = true;
-
     // Add rules to only get tweets by specific accounts
     const addedRules  = await twitter.v2.updateStreamRules({
       add: [
@@ -54,6 +51,15 @@ module.exports = (client) => {
       ETwitterStreamEvent.ConnectionError,
       err => console.log('Connection error!', err),
     );
+
+    stream.on(
+      // Emitted when a Twitter sent a signal to maintain connection active
+      ETwitterStreamEvent.DataKeepAlive,
+      () => console.log('Twitter has a keep-alive packet.'),
+    );
+
+    // Enable reconnect feature
+    stream.autoReconnect = true;
 
   });
 }
