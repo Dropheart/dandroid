@@ -38,14 +38,22 @@ module.exports = async (client) => {
         .setTimestamp();
 
         if (post.post_hint == 'image') {
-            embed.addField(post.title, post.url)
-            embed.setImage(post.url)
+            embed.addFields(
+                { name: post.title, value: post.url },
+            );
+            embed.setImage(post.url);
         } else if (post.post_hint) {
-            embed.addField(post.title, post.url)
+            embed.addFields(
+                { name: post.title, value: post.url },
+            );
         } else if (post.selftext) {
-            embed.addField(post.title, post.selftext)
+            embed.addFields(
+                { name: post.title, value: post.selftext },
+            );
         } else {
-            embed.addField(post.title, '_No selftext was provided_')
+            embed.addFields(
+                { name: post.title, value: '_No selftext was provided_' },
+            );
         }
 
 
