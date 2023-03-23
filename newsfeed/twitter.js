@@ -40,11 +40,11 @@ module.exports = (client) => {
 
       try {
         switch(tweet.data.author_id) {
-          case '75916180': webhookID.send(url)
-          case '1450386817': webhookDan.send(url)
-          case '174112306': webhookPlatz.send(url)
-          case '551162023': webhookWayne.send(url)
-          case '567474604': webhookBen.send(url)
+          case '75916180': webhookID.send(url); break;
+          case '1450386817': webhookDan.send(url); break;
+          case '174112306': webhookPlatz.send(url); break;
+          case '551162023': webhookWayne.send(url); break;
+          case '567474604': webhookBen.send(url);
         }
       } catch (error) {
         console.error(error);
