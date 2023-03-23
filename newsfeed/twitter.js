@@ -23,8 +23,14 @@ module.exports = (client) => {
         ]
     });
 
-    // Emitted only on initial connection success
-    stream.on(ETwitterStreamEvent.Connected, () => console.log('Stream enabled for: @imaginedragons, @danreynolds, @danielplatzman, @waynesermon, @benamckee'));
+    // Check if Stream is running and rules have been applied
+    try {
+      const rules = await client.v2.streamRules();
+      console.log(rules.data);
+      console.log('Stream enabled for: @imaginedragons, @danreynolds, @danielplatzman, @waynesermon, @benamckee')
+    } catch (error) {
+      console.error(error);
+    }
 
     stream.on(ETwitterStreamEvent.Data, (tweet) => {
       console.log(tweet);
@@ -50,12 +56,6 @@ module.exports = (client) => {
       // Emitted when Node.js {response} emits a 'error' event (contains its payload).
       ETwitterStreamEvent.ConnectionError,
       err => console.log('Connection error!', err),
-    );
-
-    stream.on(
-      // Emitted when a Twitter sent a signal to maintain connection active
-      ETwitterStreamEvent.DataKeepAlive,
-      () => console.log('Twitter has a keep-alive packet.'),
     );
 
     // Enable reconnect feature
