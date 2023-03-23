@@ -3,7 +3,6 @@ const { Events } = require('discord.js');
 module.exports = {
 	name: Events.GuildMemberUpdate,
 	async execute(oldMember, newMember) {
-        console.log(newMember);
 		if (newMember.guild.id == "226576492782551042") {
             if (oldMember.pending && !newMember.pending) {
                 welcomeChannel = await newMember.client.channels.fetch(config.welcomeChannel);
