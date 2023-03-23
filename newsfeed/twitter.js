@@ -11,17 +11,15 @@ module.exports = (client) => {
   const webhookDan = new WebhookClient({ id: config.webhookDan_id, token: config.webhookDan_token });
   const webhookPlatz = new WebhookClient({ id: config.webhookPlatz_id, token: config.webhookPlatz_token });
   const webhookWayne = new WebhookClient({ id: config.webhookWayne_id, token: config.webhookWayne_token });
-  const webhookBen = new WebhookClient({ id: config.webhookBen_id, token: config.webhookBen_token });
-
-  
+  const webhookBen = new WebhookClient({ id: config.webhookBen_id, token: config.webhookBen_token });  
 
   client.once('ready', async () => {
     const stream = await twitter.v2.searchStream({ 'user.fields': ['username'], expansions: ['author_id']});
 
     const addedRules  = await twitter.v2.updateStreamRules({
       add: [
-         {value: '-is:retweet -is:reply (from:75916180 OR from:1450386817 OR from:174112306 OR from:551162023 OR from:567474604)', tag: 'userIds'}
-      ]
+        {value: '-is:retweet -is:reply (from:75916180 OR from:1450386817 OR from:174112306 OR from:551162023 OR from:567474604)', tag: 'userIds'}
+        ]
     });
 
     console.log('Stream enabled for: @imaginedragons, @danreynolds, @danielplatzman, @waynesermon, @benamckee');
@@ -31,37 +29,19 @@ module.exports = (client) => {
       console.log(tweet.includes);
       var url = "https://twitter.com/" + tweet.includes.users[0].username + "/status/" + tweet.data.id;
       console.log(url);
-      if (tweet.data.author_id == '75916180'){
-        try {
-          webhookID.send(url);
-        } catch (error) {
-              console.error(error);
-        } 
-      } else if (tweet.data.author_id == '1450386817'){
-        try {
-          webhookDan.send(url);
-        } catch (error) {
-              console.error(error);
-        } 
-      } else if (tweet.data.author_id == '174112306'){
-        try {
-          webhookPlatz.send(url);
-        } catch (error) {
-              console.error(error);
-        } 
-      } else if (tweet.data.author_id == '551162023'){
-        try {
-          webhookWayne.send(url);
-        } catch (error) {
-              console.error(error);
-        } 
-      } else if (tweet.data.author_id == '567474604'){
-        try {
-          webhookBen.send(url);
-        } catch (error) {
-          console.error(error);
-        } 
+
+      try {
+        switch(tweet.data.author_id) {
+          case '75916180': webhookID.send(url)
+          case '1450386817': webhookDan.send(url)
+          case '174112306': webhookPlatz.send(url)
+          case '551162023': webhookWayne.send(url)
+          case '567474604': webhookBen.send(url)
+        }
+      } catch (error) {
+        console.error(error);
       }
+
     });
 
   });
