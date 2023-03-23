@@ -2,7 +2,7 @@ module.exports = (client) => {
   const { WebhookClient } = require('discord.js');
   const { TwitterApi, ETwitterStreamEvent } = require('twitter-api-v2');
   const config = require("../config.json");
-  var twitterAccs = [ '75916180','1450386817','174112306','551162023','567474604' ];
+  // var twitterAccs = [ '75916180','1450386817','174112306','551162023','567474604' ];
   // Twitter IDs of: @imaginedragons, @danreynolds, @danielplatzman, @waynesermon, @benamckee
   
   const twitter = new TwitterApi(config.twitter_bearer);
@@ -16,13 +16,18 @@ module.exports = (client) => {
   client.once('ready', async () => {
     const stream = await twitter.v2.searchStream({ 'user.fields': ['username'], expansions: ['author_id']});
 
+    // Enable reconnect feature
+    stream.autoReconnect = true;
+
+    // Add rules to only get tweets by specific accounts
     const addedRules  = await twitter.v2.updateStreamRules({
       add: [
         {value: '-is:retweet -is:reply (from:75916180 OR from:1450386817 OR from:174112306 OR from:551162023 OR from:567474604)', tag: 'userIds'}
         ]
     });
 
-    console.log('Stream enabled for: @imaginedragons, @danreynolds, @danielplatzman, @waynesermon, @benamckee');
+    // Emitted only on initial connection success
+    stream.on(ETwitterStreamEvent.Connected, () => console.log('Stream enabled for: @imaginedragons, @danreynolds, @danielplatzman, @waynesermon, @benamckee'));
 
     stream.on(ETwitterStreamEvent.Data, (tweet) => {
       console.log(tweet);
@@ -43,6 +48,12 @@ module.exports = (client) => {
       }
 
     });
+
+    stream.on(
+      // Emitted when Node.js {response} emits a 'error' event (contains its payload).
+      ETwitterStreamEvent.ConnectionError,
+      err => console.log('Connection error!', err),
+    );
 
   });
 }
