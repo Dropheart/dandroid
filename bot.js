@@ -28,6 +28,6 @@ for (const file of eventFiles) {
 
 client.login(config.token);
 client.once('ready', () => console.log(`Logged in as ${client.user.username}`))
-require("./newsfeed/twitter.js")(client);
+// require("./newsfeed/twitter.js")(client);
 require("./newsfeed/reddit.js")(client);
 require("./songvssong.js")(client);
