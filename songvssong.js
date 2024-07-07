@@ -182,6 +182,19 @@ module.exports = async (client) => {
       "Children of the Sky (a Starfield song)",
       "https://www.youtube.com/watch?v=zHfIkyLh-Ew",
     ],
+    ["Wake Up", "https://www.youtube.com/watch?v=q392mSz4VeY"],
+    ["Nice To Meet You", "https://www.youtube.com/watch?v=NeUfmyu5t8Q"],
+    ["Eyes Closed", "https://www.youtube.com/watch?v=v08qmr8m_-w"],
+    ["Take Me To The Beach", "https://www.youtube.com/watch?v=7HLrviPwEaU"],
+    ["In Your Corner", "https://www.youtube.com/watch?v=wnz2eZ4fffM"],
+    ["Gods Don't Pray", "https://www.youtube.com/watch?v=NKcWKS2MW1M"],
+    ["Don't Forget Me", "https://www.youtube.com/watch?v=fiBcK6RJp68"],
+    ["Kid", "https://www.youtube.com/watch?v=8wETGJ91oY0"],
+    ["Fire in These Hills", "https://www.youtube.com/watch?v=baYqOdpsqbg"],
+    [
+      "Eyes Closed (feat. J Balvin)",
+      "https://www.youtube.com/watch?v=WoeFMTbR5Ps",
+    ],
   ];
 
   function randomiser() {
