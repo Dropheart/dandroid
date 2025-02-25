@@ -195,6 +195,25 @@ module.exports = async (client) => {
       "Eyes Closed (feat. J Balvin)",
       "https://www.youtube.com/watch?v=WoeFMTbR5Ps",
     ],
+    ["Take Me To The Beach (feat. Baker Boy)", "https://www.youtube.com/watch?v=umNELWiCYpk"],
+    ["Take Me To The Beach (feat. Ernia)", "https://www.youtube.com/watch?v=8e0162dRcB4"],
+    ["Take Me To The Beach (feat. Jungeli)", "https://www.youtube.com/watch?v=OxIU4IWh6Zs"],
+    ["Take Me To The Beach (feat. Ado)", "https://www.youtube.com/watch?v=5Duje_sZko8"],
+    ["Woke (Demo", "https://www.youtube.com/watch?v=00BpRESPJpg"],
+    ["The Ghost Intervention (Demo)", "https://www.youtube.com/watch?v=pShuY-daffI"],
+    ["Monica (Demo)", "https://www.youtube.com/watch?v=kR8LNI61UnU"],
+    ["Black (Demo)", "https://www.youtube.com/watch?v=Z2DSV6BOMXo"],
+    ["Strange Ways (Demo)", "https://www.youtube.com/watch?v=RXLX8AgeFrY"],
+    ["I Get Carried Away (Demo)", "https://www.youtube.com/watch?v=uvGt0svH1SU"],
+    ["A-OK (Demo)", "https://www.youtube.com/watch?v=3m0WCMnCflw"],
+    ["Destroyed (Demo)", "https://www.youtube.com/watch?v=XTpBPvXatRU"],
+    ["Playin' Me (Demo)", "https://www.youtube.com/watch?v=5rn0FmTeIoI"],
+    ["My Car (Demo)", "https://www.youtube.com/watch?v=vwf5DEKeUSI"],
+    ["Cowboy (Demo)", "https://www.youtube.com/watch?v=tV2RVJh5B7E"],
+    ["Mayday (Demo)", "https://www.youtube.com/watch?v=ZdBzrryoE5Q"],
+    ["The Journey (Demo)", "https://www.youtube.com/watch?v=KS0CY606d90"],
+    ["I Bet My Life (Demo)", "https://www.youtube.com/watch?v=kJXNseMwfwA"],
+    ["Enemy (Opening Title Version from Arcane)", "https://www.youtube.com/watch?v=UqcE-IIevf0"]
   ];
 
   function randomiser() {
