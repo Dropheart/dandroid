@@ -199,7 +199,7 @@ module.exports = async (client) => {
     ["Take Me To The Beach (feat. Ernia)", "https://www.youtube.com/watch?v=8e0162dRcB4"],
     ["Take Me To The Beach (feat. Jungeli)", "https://www.youtube.com/watch?v=OxIU4IWh6Zs"],
     ["Take Me To The Beach (feat. Ado)", "https://www.youtube.com/watch?v=5Duje_sZko8"],
-    ["Woke (Demo", "https://www.youtube.com/watch?v=00BpRESPJpg"],
+    ["Woke (Demo)", "https://www.youtube.com/watch?v=00BpRESPJpg"],
     ["The Ghost Intervention (Demo)", "https://www.youtube.com/watch?v=pShuY-daffI"],
     ["Monica (Demo)", "https://www.youtube.com/watch?v=kR8LNI61UnU"],
     ["Black (Demo)", "https://www.youtube.com/watch?v=Z2DSV6BOMXo"],
