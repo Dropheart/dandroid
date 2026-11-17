@@ -13,7 +13,7 @@ const path = require('node:path');
 client.config = config
 
 // bind all events in the events folder to the client
-const eventsPath = path.join(__dirname, 'events');
+/*const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
 for (const file of eventFiles) {
@@ -24,10 +24,10 @@ for (const file of eventFiles) {
 	} else {
 		client.on(event.name, (...args) => event.execute(...args));
 	}
-}
+}*/
 
 client.login(config.token);
 client.once('ready', () => console.log(`Logged in as ${client.user.username}`))
 // require("./newsfeed/twitter.js")(client);
-require("./newsfeed/reddit.js")(client);
+// require("./newsfeed/reddit.js")(client);
 require("./songvssong.js")(client);
