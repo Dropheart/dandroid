@@ -2,7 +2,8 @@
 const { Client, IntentsBitField } = require("discord.js")
 
 const botIntents = new IntentsBitField();
-botIntents.add(IntentsBitField.Flags.Guilds, IntentsBitField.Flags.GuildMembers, IntentsBitField.Flags.GuildMessages, IntentsBitField.Flags.DirectMessages);
+// botIntents.add(IntentsBitField.Flags.Guilds, IntentsBitField.Flags.GuildMembers, IntentsBitField.Flags.GuildMessages, IntentsBitField.Flags.DirectMessages);
+botIntents.add(IntentsBitField.Flags.Guilds, IntentsBitField.Flags.GuildMessages, IntentsBitField.Flags.DirectMessages);
 
 const client = new Client({ intents: botIntents })
 const config = require("./config.json")
